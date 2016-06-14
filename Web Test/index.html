@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<title>Traning with Angular v2</title>
+</head>
+<body>
+
+<div ng-app="MyApp" ng-controller="MyController">
+	<p>{{title}}</p>
+	<form>
+       <input type="radio" ng-model="checked" value="500" ng-click="uncheck($event)" />
+        <input type="radio" ng-model="checked" value="1000" ng-click="uncheck($event)" />
+        <input type="radio" ng-model="checked" value="1500" ng-click="uncheck($event)" />
+    </form>
+</div>
+
+<script src="js/app/app.js"> </script>
+<script src="js/Controller/controller.js"> </script>
+</body>
+</html>
