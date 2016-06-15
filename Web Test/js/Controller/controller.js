@@ -7,20 +7,37 @@ $scope.TicTacToe=
 ];
 $scope.EmptySlots=9;
 $scope.checked=true;
-$scope.UserSymbol='';
-$scope.ComputerSymbol='';
-$scope.ChangeSymbol= function(letter)
+$scope.UserSymbol='X';
+$scope.ComputerSymbol='O';
+$scope.ChangeSymbol=function(letter)
 {
-	if(letter == 'X'){
-		$scope.UserSymbol=letter;
-		$scope.ComputerSymbol='O';
+	if($scope.symbolChangeDuringGame()){
+		if(letter == 'X'){
+			$scope.UserSymbol=letter;
+			$scope.ComputerSymbol='O';
+		}
+		else{
+			$scope.UserSymbol=letter
+			$scope.ComputerSymbol='X';
+		}
 	}
 	else{
-		$scope.UserSymbol=letter
-		$scope.ComputerSymbol='X';
+		window.alert("You can't change a symbol during a Game");
 	}
 
 };
+
+$scope.symbolChangeDuringGame=function(){
+	for (var i = 0; i < 9; i++) {
+		if($scope.TicTacToe[i]!='Empty')
+		{
+			return false;
+		}
+	return true;
+		
+	}
+};
+
 $scope.UserPlaying= function(index)
 {
 
@@ -55,8 +72,7 @@ $scope.ComputerPlaying= function()
 
 $scope.ResetGame=function()
 {
-	for (var i = $scope.TicTacToe.length - 1; i >= 0; i--) {
-		window.alert("is this working?")
+	for (var i = 0; i < 9; i++) {
 		$scope.TicTacToe[i]='Empty'
 	}
 };
