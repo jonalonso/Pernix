@@ -14,13 +14,15 @@
     </form>
     <p> Your Symbol: {{UserSymbol}} , Computer Symbol: {{ComputerSymbol}}</p>
 
-    <p> <span ng-click="UserPlaying(0)">{{TicTacToe[0]}} </span> | <span ng-click="UserPlaying(1)">{{TicTacToe[1]}} </span> | <span ng-click="UserPlaying(2)">{{TicTacToe[2]}} </span> </p>
+    <p> <button ng-click="UserPlaying(0)">{{TicTacToe[0]}} </button> | <button ng-click="UserPlaying(1)">{{TicTacToe[1]}} </button> | <button ng-click="UserPlaying(2)">{{TicTacToe[2]}} </button> </p>
 
-    <p> <span ng-click="UserPlaying(3)">{{TicTacToe[3]}} </span> | <span ng-click="UserPlaying(4)">{{TicTacToe[4]}} </span> | <span ng-click="UserPlaying(5)">{{TicTacToe[5]}} </span> </p>
+    <p> <button ng-click="UserPlaying(3)">{{TicTacToe[3]}} </button> | <button ng-click="UserPlaying(4)">{{TicTacToe[4]}} </button> | <button ng-click="UserPlaying(5)">{{TicTacToe[5]}} </button> </p>
 
-    <p> <span ng-click="UserPlaying(6)">{{TicTacToe[6]}} </span> | <span ng-click="UserPlaying(7)">{{TicTacToe[7]}} </span> | <span ng-click="UserPlaying(8)">{{TicTacToe[8]}} </span> </p>
+    <p> <button ng-click="UserPlaying(6)">{{TicTacToe[6]}} </button> | <button ng-click="UserPlaying(7)">{{TicTacToe[7]}} </button> | <button ng-click="UserPlaying(8)">{{TicTacToe[8]}} </button> </p>
 
 </div>
+
+<button ng-click="ResetGame()">Reset Game</button>
 
 <script src="js/app/app.js"> </script>
 <script src="js/Controller/controller.js"> </script>

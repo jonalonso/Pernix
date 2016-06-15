@@ -5,6 +5,7 @@ $scope.TicTacToe=
 [
 'Empty','Empty','Empty','Empty','Empty','Empty','Empty','Empty','Empty'
 ];
+$scope.EmptySlots=9;
 $scope.checked=true;
 $scope.UserSymbol='';
 $scope.ComputerSymbol='';
@@ -22,29 +23,41 @@ $scope.ChangeSymbol= function(letter)
 };
 $scope.UserPlaying= function(index)
 {
+
 	if($scope.TicTacToe[index]=='Empty')
 	{
-		$scope.TicTacToe[index]=$UserSymbol;
-		ComputerPlaying();
+		$scope.EmptySlots-=1;
+		$scope.TicTacToe[index]=$scope.UserSymbol;
+
+		$scope.ComputerPlaying();
 	}
 	else
 	{
 		window.alert("Click On over an empty spot");
 	}
-
-	ComputerPlaying();
 };
 
 $scope.ComputerPlaying= function()
 {
-	var index = Math.floor(Math.random() * 9);
-	if($scope.TicTacToe[index]=='Empty')
-	{
-		$scope.TicTacToe[index]=$ComputerSymbol;
+	if($scope.EmptySlots!=0){
+		var index = Math.floor(Math.random() * 9);
+		if($scope.TicTacToe[index]=='Empty')
+		{
+			$scope.EmptySlots-=1;
+			$scope.TicTacToe[index]=$scope.ComputerSymbol;
+		}
+		else
+		{
+			$scope.ComputerPlaying();
+		}
 	}
-	else
-	{
-		ComputerPlaying();
+};
+
+$scope.ResetGame=function()
+{
+	for (var i = $scope.TicTacToe.length - 1; i >= 0; i--) {
+		window.alert("is this working?")
+		$scope.TicTacToe[i]='Empty'
 	}
 };
 });
