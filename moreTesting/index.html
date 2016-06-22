@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<title>Traning with Angular v2</title>
+</head>
+<body>
+
+<div ng-app="MyApp" ng-controller="MyController">
+	<p>{{title}}</p>
+	<form>
+       <input type="radio" ng-model="checked" value="500" ng-click="ChangeSymbol('X')" checked/> X</br>
+        <input type="radio" ng-model="checked" value="1000" ng-click="ChangeSymbol('O')"/>O</br>
+    </form>
+    <p> Your Symbol: {{UserSymbol}} , Computer Symbol: {{ComputerSymbol}}</p>
+
+    <p> <button ng-click="UserPlaying(0)">{{TicTacToe[0]}} </button> | <button ng-click="UserPlaying(1)">{{TicTacToe[1]}} </button> | <button ng-click="UserPlaying(2)">{{TicTacToe[2]}} </button> </p>
+
+    <p> <button ng-click="UserPlaying(3)">{{TicTacToe[3]}} </button> | <button ng-click="UserPlaying(4)">{{TicTacToe[4]}} </button> | <button ng-click="UserPlaying(5)">{{TicTacToe[5]}} </button> </p>
+
+    <p> <button ng-click="UserPlaying(6)">{{TicTacToe[6]}} </button> | <button ng-click="UserPlaying(7)">{{TicTacToe[7]}} </button> | <button ng-click="UserPlaying(8)">{{TicTacToe[8]}} </button> </p>
+
+</div>
+
+<button ng-click="ResetGame()">Reset Game</button>
+
+<script src="js/app/app.js"> </script>
+<script src="js/Controller/controller.js"> </script>
+</body>
+</html>
