@@ -13,9 +13,13 @@
 
 <div ng-app="MyApp" ng-controller="MyController">
 
-	<h1>{{user}}'s To Do List</h1>
+	
+	
+	<button class="btn btn-danger" ng-click="SighOut()" style="float: right;">Sigh out</button>
+	
+	<h1 >{{ActualUser}}'s To Do List</h1>
 	<div class="form-group">
-	    <label class="col-lg-1 col-xs-2">New Task:</label>
+	    <label class="col-lg-2 col-xs-2">New Task:</label>
 	    <div class="col-lg-5  col-xs-4">
 	    	<input type="text" class="form-control" ng-model="newAction">
 	    </div>
